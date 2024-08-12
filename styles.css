@@ -771,10 +771,6 @@ h7 {
     .search {
         width: 80%;
     }
-
-    #input::placeholder {
-        font-size: 14px;
-    }
     
 }
 
@@ -796,18 +792,7 @@ h7 {
     .header-button {
         padding: 8px 15px;
         font-size: 14px;
-    }
-
-    .search {
-        width: 90%;
-    }
-
-    #input {
-        width: calc(100% - 30px);
-        height: 2em;
-    }
-
-     
+    }  
     .cart-item {
         flex-direction: column;
         align-items: flex-start;
