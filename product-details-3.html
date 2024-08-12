@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native</title>
+
+    <link rel="icon" type="image/png" href="https://i.ibb.co/YTJ7Ch4/Native.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Native</h1>
+
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="products.html">Products</a></p>
+            <p class="navbar-link"><a href="contact us.html">Contact us</a></p>
+        </div>
+
+        <div class="navbar-profile">
+            <div id="user">
+                <i class="fas fa-search search"></i>
+                <input type="text" id="input" name="searchBox" placeholder="Search for Native products">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart addedToCart">
+                        <div id="badge"></div>
+                    </i>
+                </a>
+                <a href="profile.html">
+                    <i class="fas fa-user-circle userIcon"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Side Navbar -->
+    <div class="side-navbar">
+        <p style="text-align: right;" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="products.html">Products</a></p>
+            <p class="side-navbar-link"><a href="contact us.html">Contact us</a></p>
+        </div>
+    </div>
+
+    <!-- Product Details -->
+    <h1>Product Details</h1>
+    <div id="product-details"></div>
+
+    <div class="product-1">
+        <img src="native.png" alt="Native organic product">
+        <div class="product-details">
+            <h1>Native organic product</h1>
+            <p class="price">Rs XXXX</p>
+            <p class="description">                
+                Native orgnaic fertilizer. best organic products.100% natural orgnanic product,nourishes your plants.
+                Unlike synthetic fertilizers, they enrich the soil by providing essential nutrients in a slow-release form.
+                Natural fertilizers include compost, manure, bone meal, fish emulsion, and green manure. 
+            </p>
+            <h1> Quantity</h1>
+            <div class="quantity">
+            
+                <input type="number" value="1">
+            
+            </div>
+            <select id="weight">
+                <option value="1000">1000 ML</option>
+                <option value="500">500 ML</option>
+                <option value="250">250 ML</option>
+                <option value="100">100 ML</option>
+            </select>
+            <h1>            </h1>
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            <h1>              </h1>
+            <button class="buy-now">Buy Now</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="headingText">Native</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="footer-icon-container">
+                    <a href="#" class="social-icon" id="instagram-icon"><i class="fab fa-instagram"
+                            style="color: #ffffff;"></i></a>
+                    <a href="#" class="social-icon" id="twitter-icon"><i class="fab fa-twitter"
+                            style="color: #ffffff;"></i></a>
+                    <a href="#" class="social-icon" id="facebook-icon"><i class="fab fa-facebook-f"
+                            style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <p>&copy; 2024 Native.com</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function addToCart() {
+                const productName = document.querySelector('.product-details h1').innerText;
+                const productQuantity = document.querySelector('.quantity input').value;
+                const productWeight = document.querySelector('#weight').value;
+                const productImage = document.querySelector('.product-1 img').src;
+                const productPrice = document.querySelector('.price').innerText;
+
+                const product = {
+                    name: productName,
+                    quantity: productQuantity,
+                    weight: productWeight,
+                    image: productImage,
+                    price: productPrice
+                };
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                window.location.href = 'cart.html';
+            }
+
+            document.querySelector('.add-to-cart').addEventListener('click', addToCart);
+        });
+    </script>
+    
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

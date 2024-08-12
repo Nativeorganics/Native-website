@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native</title>
+
+    <link rel="website icon"  type="png"href="https://i.ibb.co/YTJ7Ch4/Native.jpg">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!--My Css-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar">
+        <h1>Native</h1>
+
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="products.html">Products</a></p>
+            <p class="navbar-link"><a href="contact us.html">Contact us</a></p>
+            
+                 
+        </div>
+
+        </div>
+        <div class="navbar-profile">
+            <div id="search">
+                <i class="fas fa-search search"></i>
+                <input type="text" id="input" name="searchBox" placeholder="Search for Native products" oninput="showSuggestions(this.value)" onfocus="expandSearchBar()" onblur="shrinkSearchBar()">
+            </div>
+            
+            
+            <div id="user">
+                
+                <a href="cart.html"> <i class="fas fa-shopping-cart addedToCart"><div id="badge"></div></i></a>
+                <div id="usernameDisplay" style="display: none;">Hi! <span id="displayUsername">Guest</span></div>
+
+                <i class="fas fa-user-circle userIcon" onclick="togglePopup()"></i>
+                
+            </div>
+        </div>
+        
+        <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars"> </i>
+        </div>
+
+    </nav>
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <button onclick="hidePopup()" class="close-btn">&times;</button>
+            <p> My Account</p>
+            <h2>Welcome to Native Organics</h2>
+            <button onclick="logout()" class="logout-btn"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+            <div class="tabs">
+                <button class="tab-button" onclick="showTab('login')">Login</button>
+                <button class="tab-button" onclick="showTab('create')">Create Account</button>
+                
+            </div>
+            <div id="loginTab" class="tab-content">
+                <h3>Login</h3>
+                <form onsubmit="handleLogin(event)">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                    <button type="submit">Login</button>
+                    <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+                </form>
+                <div id="forgotTab" class="tab-content" style="display: none;">
+                    <h3>Forgot Password</h3>
+                    <form onsubmit="handleForgotPassword(event)">
+                        <label for="forgotEmail">Email:</label>
+                        <input type="email" id="forgotEmail" required>
+                        <button type="submit">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+            <div id="createTab" class="tab-content" style="display: none;">
+                <h3>Create Account</h3>
+                <form onsubmit="handleCreateAccount(event)">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                    <label for="createEmail">Email:</label>
+                    <input type="email" id="createEmail" required>
+                    <label for="createPassword">Password:</label>
+                    <input type="password" id="createPassword" required>
+                    <button type="submit">Create Account</button>
+                </form>
+            </div>   
+        </div>
+    </div>
+   
+    <script>
+        function logout() {
+            document.getElementById('usernameDisplay').style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('loginEmail').value = '';
+            document.getElementById('loginPassword').value = '';
+            document.getElementById('createEmail').value = '';
+            document.getElementById('createPassword').value = '';
+            alert('You have been logged out!');
+            hidePopup();
+        }
+        
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
+        }
+        
+        </script>
+    
+
+    <!--Side navbar-->
+    <div class="side-navbar">
+        <p style="text-align: right;" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="products.html">Products</a></p>
+            <p class="side-navbar-link"><a href="contact us.html">Contact us</a></p>
+        </div>
+
+    </div>
+
+    <!--Header-->
+    <div class="header">
+
+        <div>
+            <img src="https://i.ibb.co/YTJ7Ch4/Native.jpg" alt="logo" width="200" height="200">
+
+        </div>
+
+        <div>
+            <h1>Native</h1>
+            <p>"Nature's Pure Path"</p>
+            <button class="header-button" onclick="location.href='products.html'">Shop now</button>
+        </div>
+
+        <div>
+            <img class="header-image" src="" alt="native">
+
+        </div>
+
+
+
+    </div>
+
+    <!--Services-->
+    <div class="service">
+
+        <div class="service-container-1">
+            <div>
+                <h2>We provide</h2>
+                <h2>Best customer experience</h2>
+            </div>
+
+           
+
+        </div>
+
+        <div class="service-container-2">
+            <div>
+                <i class="fa-regular fa-face-smile"></i>
+                <h4>Simplify your farming routine with our user-friendly fertilizer products</h4>
+                <p>Quas quod molestias velit sit minima, maxime est? Culpa perspiciatis voluptatibus quidem corrupti vel
+                    fuga.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-seedling"></i>
+                <h4>Nature's organic products</h4>
+                <p>Quas quod molestias velit sit minima, maxime est? Culpa perspiciatis voluptatibus quidem corrupti vel
+                    fuga.</p>
+            </div>
+
+            <div>
+                <i class="fa-regular fa-face-smile"></i>
+                <h4>Invest in affordable, high-quality organic solutions that deliver exceptional results</h4>
+                <p>Quas quod molestias velit sit minima, maxime est? Culpa perspiciatis voluptatibus quidem corrupti vel
+                    fuga.</p>
+            </div>
+        </div>
+
+    </div>
+    <!--New products-->
+    <h3>Our New Products</h3>
+    <div class="new-products">
+        <a href="product-details.html?id=1" class="new-products-container">
+            <img src="https://i.ibb.co/YTJ7Ch4/Native.jpg?1" alt="Product 1" width="200" height="200">
+            <h1>Native organics</h1>
+            <p class="price">Rs XXXX</p>
+        </a>
+        <a href="product-details-1.html?id=2" class="new-products-container">
+            <img src="https://i.ibb.co/YTJ7Ch4/Native.jpg?2" alt="Product 2" width="200" height="200">
+            <h1>Native organics</h1>
+            <p class="price">Rs XXXX</p>
+        </a>
+        <a href="product-details-2.html?id=3" class="new-products-container">
+            <img src="https://i.ibb.co/YTJ7Ch4/Native.jpg?3" alt="Product 3" width="200" height="200">
+            <h1>Native organics</h1>
+            <p class="price">Rs XXXX</p>
+        </a>
+        <a href="product-details-3.html?id=4" class="new-products-container">
+            <img src="https://i.ibb.co/YTJ7Ch4/Native.jpg?4" alt="Product 4" width="200" height="200">
+            <h1>Native organics</h1>
+            <p class="price">Rs XXXX</p>
+        </a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const containers = document.querySelectorAll('.New-products-container');
+    
+            containers.forEach(container => {
+                container.addEventListener('click', () => {
+                    const productId = container.getAttribute('data-product-id');
+                    window.location.href = `product-details.html?id=${productId}`;
+                });
+            });
+        });
+    </script>
+    
+
+     <!--Newsletter-->
+    <div class="news">
+        <h2>Join Our News Letter</h2>
+        <p>Sign up to our email newsletter for more information and many more</p>
+
+        <div>
+            <form id="subscribeForm">
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="headingText">Native</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="footer-icon-container">
+                    <a href="#" class="social-icon" id="instagram-icon"><i class="fab fa-instagram" style="color: #ffffff;"></i></a>
+                    <a href="#" class="social-icon" id="twitter-icon"><i class="fab fa-twitter" style="color: #ffffff;"></i></a>
+                    <a href="#" class="social-icon" id="facebook-icon"><i class="fab fa-facebook-f" style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <p>&copy 2024 Native.com</p>
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native</title>
+
+    <link rel="website icon" type="png" href="https://i.ibb.co/YTJ7Ch4/Native.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Native</h1>
+
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="products.html">Products</a></p>
+            <p class="navbar-link"><a href="contact us.html">Contact us</a></p>
+        </div>
+
+        <div class="navbar-profile">
+            <div id="user">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart addedToCart">
+                        <div id="badge"></div>
+                    </i>
+                </a>
+                <a href="profile.html">
+                    <i class="fas fa-user-circle userIcon"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Side Navbar -->
+    <div class="side-navbar">
+        <p style="text-align: right;" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="products.html">Products</a></p>
+            <p class="side-navbar-link"><a href="contact us.html">Contact us</a></p>
+        </div>
+    </div>
+
+    <!-- Products -->
+
+    <div class="product-section">
+        <form class="product-search">
+            <input type="text" id="search" placeholder="search for native products">
+            <i class="fa solid fa-magnifying-glass"></i>
+        </form>
+
+        <div class="container-card">
+            <a href="product-details.html?id=1" class="card"  data-name="Organic fertilizer">
+                <img src="images/fertilizer1.jpg" alt="Organic Compost">
+                <h3>Organic Compost</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 500</p>
+            </a>
+            <a href="product-details.html?id=2" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer2.jpg" alt="Organic Compost">
+                <h3>Organic compost</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 650</p>
+            </a>
+            <a href="product-details.html?id=3" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer3.jpg" alt="Organic Compost">
+                <h3>Organic compost</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 300</p>
+            </a>
+            <a href="product-details.html?id=4" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer4.jpg" alt="Organic Compost">
+                <h3>Organic compost</h3>
+                <p>Native's bestt</p>
+                <p class="price">Rs 400</p>
+            </a>
+            <a href="product-details.html?id=5" class="card"data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=6" class="card"data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=7" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=8" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=9" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=10" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=11" class="card"data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=12" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+            <a href="product-details.html?id=13" class="card" data-name="Organic Compost">
+                <img src="images/fertilizer5.jpg" alt="Organic Manure">
+                <h3>Organic Manure</h3>
+                <p>Native's best</p>
+                <p class="price">Rs 350</p>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="headingText">Native</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="footer-icon-container">
+                    <a href="#" class="social-icon" id="instagram-icon"><i class="fab fa-instagram" style="color: #ffffff;"></i></a>
+                    <a href="#" class="social-icon" id="twitter-icon"><i class="fab fa-twitter" style="color: #ffffff;"></i></a>
+                    <a href="#" class="social-icon" id="facebook-icon"><i class="fab fa-facebook-f" style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <p>&copy; 2024 Native.com</p>
+    </div>
+
+    <script src="products.js"></script>
+</body>
+
+</html>
